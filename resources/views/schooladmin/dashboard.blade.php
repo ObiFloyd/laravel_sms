@@ -1,1 +1,8 @@
-<h1>Welcome Admin</h1>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h1>SchoolAdmin Dashboard</h1>
+    <p>Welcome, {{ auth()->user()->name }}</p>
+</div>
+@endsection
