@@ -30,3 +30,8 @@ Route::get('/parent', [DashboardController::class, 'parent'])->name('parent.dash
 Route::middleware(['auth', 'role:Bursar'])->group(function () {
 Route::get('/bursar', [DashboardController::class, 'bursar'])->name('bursar.dashboard');
 });
+ 
+Route::middleware(['auth'])->group(function () {
+    // limit route access to SuperAdmin via middleware on controller or here:
+    Route::resource('schools', SchoolController::class);
+});
